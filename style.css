@@ -1,0 +1,199 @@
+HTML - Estrutura da Página
+<html lang="pt-BR">
+
+● Define o início do documento HTML e indica que o idioma principal é português do
+Brasil.
+
+<head>
+
+● Início do cabeçalho da página, onde ficam links de estilo, fontes, e título (não visíveis
+diretamente no corpo da página).
+
+<link rel="stylesheet" href="styles.css">
+
+● Importa o arquivo de estilos CSS externo chamado styles.css.
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com"
+crossorigin>
+
+● Pré-conexão com os servidores do Google Fonts, o que ajuda no carregamento
+mais rápido das fontes.
+
+<link
+href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wgh
+t@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&displa
+y=swap"
+
+rel="stylesheet">
+
+● Importa a fonte Chakra Petch em diferentes pesos e estilos do Google Fonts.
+
+<title>Guiminamflix</title>
+</head>
+
+● Define o título da aba do navegador como “Guiminamflix”.
+● Fecha a seção <head>.
+
+<body>
+
+● Início do corpo visível da página.
+
+<header>GUIMINAMFLIX</header>
+
+● Cabeçalho da página com o título principal “GUIMINAMFLIX”.
+
+<section class="chamada">
+
+● Início de uma seção de destaque (como se fosse o "filme em cartaz").
+
+<div class="chamada-texto">
+<h1>ATRAVÉS DO ARANHAVERSO</h1>
+<p>#homem-aranha</p>
+</div>
+
+● Um bloco de texto dentro da seção com título e hashtag.
+
+<div>
+<iframe width="560" height="315"
+
+src="https://www.youtube.com/embed/gt_fAE1Eg2Q?si=EEv-tsY_b1B2OwKE"
+title="YouTube video player" frameborder="0"
+
+allow="accelerometer; autoplay; clipboard-write;
+encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin"
+
+allowfullscreen></iframe>
+
+</div>
+
+● Vídeo do YouTube embutido (iframe) com configurações para autoplay, segurança
+e controle de mídia.
+
+</section>
+
+● Fim da seção de destaque (filme principal).
+
+<section class="categoria">
+<h2>Filmes e séries</h2>
+
+● Início de outra seção chamada "Filmes e séries".
+
+<div class="categoria-videos">
+
+● Container que abriga os thumbnails dos vídeos.
+
+Cada um dos blocos a seguir é uma imagem miniatura de vídeo do YouTube:
+
+<a href="https://www.youtube.com/watch?v=cs15QqG6Gjc">
+<img
+
+src="https://img.youtube.com/vi/cs15QqG6Gjc/maxresdefault.jpg" />
+
+</a>
+
+● Quando o usuário clica, ele é redirecionado ao vídeo do YouTube.
+● A imagem vem da miniatura oficial do vídeo no YouTube.
+
+(Os próximos <a> seguem o mesmo padrão, apenas com vídeos diferentes.)
+
+</div>
+</section>
+</body>
+</html>
+
+● Fecha a seção de vídeos, o corpo e o documento HTML.
+
+CSS - Estilização da Página
+body {
+color: white;
+background: black;
+margin: 0px;
+font-family: "Chakra Petch", sans-serif;
+margin-bottom: 100px;
+}
+
+● Define fundo preto e texto branco no corpo da página.
+● Remove margens padrão.
+● Usa a fonte Chakra Petch.
+● Adiciona margem inferior (100px).
+
+header {
+border-bottom: solid 2px rgb(42, 122, 228);
+padding: 20px;
+font-size: 32px;
+color: rgb(42, 122, 228);
+}
+
+● O cabeçalho tem uma linha azul na parte inferior, texto grande e espaçamento
+interno.
+
+.chamada {
+background: rgb(184, 156, 213);
+padding-bottom: 80px;
+padding-top: 80px;
+display: flex;
+justify-content: center;
+}
+
+● A seção de destaque tem fundo roxo claro, espaçamento vertical e usa Flexbox
+para centralizar horizontalmente os elementos.
+
+.chamada-texto {
+margin-right: 5%;
+}
+
+● Adiciona margem à direita no texto da chamada para separar do vídeo.
+
+h1 {
+font-size: 40px;
+}
+
+● Tamanho do título principal.
+
+p {
+font-size: 20px;
+}
+
+● Tamanho do parágrafo (hashtag).
+
+.categoria-videos {
+display: flex;
+overflow-x: auto;
+gap: 10px;
+
+}
+
+● Usa Flexbox para exibir vídeos em linha.
+● Se os vídeos ultrapassarem a largura da tela, aparecem com scroll horizontal.
+● Espaçamento de 10px entre os vídeos.
+
+.categoria {
+padding-left: 20px;
+padding-right: 20px;
+margin-top: 50px;
+}
+
+● Espaçamento lateral de 20px e superior de 50px na seção de categorias.
+
+.categoria-videos img {
+opacity: 0.5;
+height: 200px;
+}
+
+● Miniaturas dos vídeos começam com opacidade baixa (meio apagadas) e altura
+fixa de 200px.
+
+.categoria-videos img:hover {
+opacity: 1.0;
+border: 3px solid green;
+}
+
+● Quando o usuário passa o mouse, a imagem fica totalmente visível e ganha uma
+borda verde.
+.categoria h2 {
+color: rgb(42, 122, 228);
+}
+
+● Título “Filmes e séries” recebe a mesma cor azul do cabeçalho.
